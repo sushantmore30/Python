@@ -1,0 +1,16 @@
+{
+	"name": "PostgreSQLds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PostgreSqlLs",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "PostgreSqlV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "myschema",
+			"table": "studentdata"
+		}
+	}
+}
