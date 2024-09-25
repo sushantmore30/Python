@@ -1,0 +1,12 @@
+{
+	"name": "get_all_table_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PostgreSqlLs",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "PostgreSqlV2Table",
+		"schema": []
+	}
+}
