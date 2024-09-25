@@ -1,0 +1,9 @@
+{
+	"name": "sushant-adf-18",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ce240d94-2925-4e15-90af-0a161dfb5320",
+		"tenantId": "f2ad7b2b-a31f-43a5-a6a5-b9b6082aebab"
+	}
+}
