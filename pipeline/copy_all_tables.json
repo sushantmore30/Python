@@ -60,7 +60,7 @@
 								"source": {
 									"type": "PostgreSqlV2Source",
 									"query": {
-										"value": "@{concat('select * from', item().schematable,'.',item().tablename)}",
+										"value": "@{concat('SELECT * FROM ', item().schematable, '.',item().tablename)}",
 										"type": "Expression"
 									}
 								},
@@ -96,7 +96,7 @@
 									"referenceName": "table_data_csv_format",
 									"type": "DatasetReference",
 									"parameters": {
-										"schemaname": {
+										"schematable": {
 											"value": "@item().schematable",
 											"type": "Expression"
 										},

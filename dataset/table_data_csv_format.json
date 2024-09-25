@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"schemaname": {
+			"schematable": {
 				"type": "string"
 			},
 			"tablename": {
