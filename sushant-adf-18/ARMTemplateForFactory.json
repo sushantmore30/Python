@@ -101,7 +101,7 @@
 										"source": {
 											"type": "PostgreSqlV2Source",
 											"query": {
-												"value": "@{concat('select * from', item().schematable,'.',item().tablename)}",
+												"value": "@{concat('SELECT * FROM myschema.', item().tablename)}",
 												"type": "Expression"
 											}
 										},
@@ -138,7 +138,7 @@
 											"referenceName": "table_data_csv_format",
 											"type": "DatasetReference",
 											"parameters": {
-												"schemaname": {
+												"schematable": {
 													"value": "@item().schematable",
 													"type": "Expression"
 												},
@@ -328,7 +328,7 @@
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"schemaname": {
+					"schematable": {
 						"type": "string"
 					},
 					"tablename": {
@@ -340,14 +340,6 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@{concat(dataset().tablename,'.csv')}",
-							"type": "Expression"
-						},
-						"folderPath": {
-							"value": "@{concat(dataset().schemaname, '/',dataset().tablename)}",
-							"type": "Expression"
-						},
 						"fileSystem": "bronze"
 					},
 					"columnDelimiter": ",",
