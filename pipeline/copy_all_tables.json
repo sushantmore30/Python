@@ -94,7 +94,17 @@
 							"outputs": [
 								{
 									"referenceName": "table_data_csv_format",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"schemaname": {
+											"value": "@item().schematable",
+											"type": "Expression"
+										},
+										"tablename": {
+											"value": "@item().tablename",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
