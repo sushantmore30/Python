@@ -101,7 +101,7 @@
 										"source": {
 											"type": "PostgreSqlV2Source",
 											"query": {
-												"value": "@{concat('SELECT * FROM myschema.', item().tablename)}",
+												"value": "@{concat('SELECT * FROM ',item().schematable,'.', item().tablename)}",
 												"type": "Expression"
 											}
 										},
