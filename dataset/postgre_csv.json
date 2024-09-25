@@ -1,0 +1,19 @@
+{
+	"name": "postgre_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storagels",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "containerpostgre"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
