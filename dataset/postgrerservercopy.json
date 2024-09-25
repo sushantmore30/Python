@@ -5,6 +5,14 @@
 			"referenceName": "PostgreSqlLs",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"schematable": {
+				"type": "string"
+			},
+			"tablename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "PostgreSqlV2Table",
 		"schema": []
