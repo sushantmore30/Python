@@ -1,0 +1,6 @@
+{
+	"name": "NewMachineSelfIR",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
