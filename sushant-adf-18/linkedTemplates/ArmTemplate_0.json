@@ -25,7 +25,7 @@
 		},
 		"PostgreSqlLs_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "Batch18"
+			"defaultValue": "postgres"
 		},
 		"PostgreSqlLs_properties_typeProperties_username": {
 			"type": "string",
@@ -55,6 +55,16 @@
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SelfHostedIR')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/NewMachineSelfIR')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -153,12 +163,12 @@
 					"authenticationType": "Basic"
 				},
 				"connectVia": {
-					"referenceName": "SelfHostedIR",
+					"referenceName": "NewMachineSelfIR",
 					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/SelfHostedIR')]"
+				"[concat(variables('factoryId'), '/integrationRuntimes/NewMachineSelfIR')]"
 			]
 		},
 		{
