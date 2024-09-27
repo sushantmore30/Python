@@ -21,7 +21,7 @@
 		},
 		"PostgreSqlLs_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "postgres"
+			"defaultValue": "Batch18"
 		},
 		"PostgreSqlLs_properties_typeProperties_username": {
 			"type": "string",

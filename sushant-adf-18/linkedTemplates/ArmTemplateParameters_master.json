@@ -15,7 +15,7 @@
 			"value": "localhost"
 		},
 		"PostgreSqlLs_properties_typeProperties_database": {
-			"value": "postgres"
+			"value": "Batch18"
 		},
 		"PostgreSqlLs_properties_typeProperties_username": {
 			"value": "postgres"
