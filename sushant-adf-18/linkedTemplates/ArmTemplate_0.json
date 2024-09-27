@@ -54,7 +54,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SelfHostedIR')]",
+			"name": "[concat(parameters('factoryName'), '/NewMachineSelfIR')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -64,7 +64,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/NewMachineSelfIR')]",
+			"name": "[concat(parameters('factoryName'), '/SelfHostedIR')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -91,7 +91,7 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
-					"firstRowAsHeader": true,
+					"firstRowAsHeader": false,
 					"quoteChar": "\""
 				},
 				"schema": []
@@ -204,7 +204,10 @@
 				"annotations": [],
 				"type": "PostgreSqlV2Table",
 				"schema": [],
-				"typeProperties": {}
+				"typeProperties": {
+					"schema": "myschema",
+					"table": "studentdata"
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/PostgreSqlLs')]"
