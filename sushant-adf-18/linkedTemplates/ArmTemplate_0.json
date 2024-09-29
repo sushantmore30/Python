@@ -74,16 +74,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/postgreIR')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/getMetaData')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -218,12 +208,12 @@
 					"authenticationType": "Basic"
 				},
 				"connectVia": {
-					"referenceName": "NewMachineSelfIR",
+					"referenceName": "SelfHostedIR",
 					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/NewMachineSelfIR')]"
+				"[concat(variables('factoryId'), '/integrationRuntimes/SelfHostedIR')]"
 			]
 		},
 		{
@@ -262,10 +252,53 @@
 								"type": "DelimitedTextReadSettings"
 							}
 						}
+					},
+					{
+						"name": "ForEach1",
+						"type": "ForEach",
+						"dependsOn": [
+							{
+								"activity": "Get Metadata1",
+								"dependencyConditions": [
+									"Completed"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"items": {
+								"value": "@activity('Get Metadata1').output.childItems",
+								"type": "Expression"
+							},
+							"activities": [
+								{
+									"name": "Set variable1",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"policy": {
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "getNames",
+										"value": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
 					}
 				],
 				"policy": {
 					"elapsedTimeMetric": {}
+				},
+				"variables": {
+					"getNames": {
+						"type": "String"
+					}
 				},
 				"annotations": []
 			},
