@@ -5,11 +5,23 @@
 		"factoryName": {
 			"value": "sushant-adf-18"
 		},
+		"AzureSQLDatabaseLinkedService_password": {
+			"value": ""
+		},
 		"PostgreSqlLs_password": {
 			"value": ""
 		},
 		"storagels_accountKey": {
 			"value": ""
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_server": {
+			"value": "sqlserver-18.database.windows.net"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_database": {
+			"value": "database18"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_userName": {
+			"value": "adminuser"
 		},
 		"PostgreSqlLs_properties_typeProperties_server": {
 			"value": "localhost"

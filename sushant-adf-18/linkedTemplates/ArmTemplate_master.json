@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "sushant-adf-18"
 		},
+		"AzureSQLDatabaseLinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSQLDatabaseLinkedService'"
+		},
 		"PostgreSqlLs_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'PostgreSqlLs'"
@@ -14,6 +18,18 @@
 		"storagels_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'storagels'"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlserver-18.database.windows.net"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "database18"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminuser"
 		},
 		"PostgreSqlLs_properties_typeProperties_server": {
 			"type": "string",
@@ -58,11 +74,23 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureSQLDatabaseLinkedService_password": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_password')]"
+					},
 					"storagels_accountKey": {
 						"value": "[parameters('storagels_accountKey')]"
 					},
 					"PostgreSqlLs_password": {
 						"value": "[parameters('PostgreSqlLs_password')]"
+					},
+					"AzureSQLDatabaseLinkedService_properties_typeProperties_server": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_properties_typeProperties_server')]"
+					},
+					"AzureSQLDatabaseLinkedService_properties_typeProperties_database": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_properties_typeProperties_database')]"
+					},
+					"AzureSQLDatabaseLinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_properties_typeProperties_userName')]"
 					},
 					"storagels_properties_typeProperties_url": {
 						"value": "[parameters('storagels_properties_typeProperties_url')]"
