@@ -1,0 +1,13 @@
+{
+	"name": "postgrerservercopy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PostgreSqlLs",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "PostgreSqlV2Table",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

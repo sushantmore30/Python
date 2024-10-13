@@ -1,0 +1,17 @@
+{
+	"name": "get_all_table_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PostgreSqlLs",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "PostgreSqlV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "myschema",
+			"table": "studentdata"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
