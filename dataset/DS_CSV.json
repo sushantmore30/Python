@@ -1,0 +1,39 @@
+{
+	"name": "DS_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "storageDatalk2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TABLE_SCHEMA": {
+				"type": "string"
+			},
+			"TABLE_NAME": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@{concat(dataset().TABLE_NAME,'.csv')}",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@{concat(dataset().TABLE_SCHEMA,'\\',dataset().TABLE_NAME)}",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

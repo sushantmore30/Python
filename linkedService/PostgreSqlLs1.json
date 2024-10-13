@@ -1,0 +1,21 @@
+{
+	"name": "PostgreSqlLs1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "localhost",
+			"port": 5432,
+			"database": "Batch17",
+			"username": "postgres",
+			"sslMode": 1,
+			"authenticationType": "Basic",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjZTBhYjc4Zi1iMTc2LTRjZTctOGMyMC1jMGZkNDFjYTVjYmUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfhostpostgre",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

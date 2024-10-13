@@ -1,0 +1,28 @@
+{
+	"name": "OnPreSqlServerLk",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "VELC-LT-1RWYB54\\SQLEXPRESS01",
+			"database": "AdventureWorksLT2022",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "sushant",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "PassName"
+			}
+		},
+		"connectVia": {
+			"referenceName": "selfhostpostgre",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "postgre-adf-18",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d99ea049-875c-491b-905a-5bd655695753",
+		"tenantId": "f2ad7b2b-a31f-43a5-a6a5-b9b6082aebab"
+	}
+}
