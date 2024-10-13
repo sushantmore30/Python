@@ -1,0 +1,75 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "postgre-adf-18"
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureSQLDatabaseLinkedService_password": {
+			"value": ""
+		},
+		"PostgreSqlLs_password": {
+			"value": ""
+		},
+		"PostgreSqlLs1_password": {
+			"value": ""
+		},
+		"storageDatalk2_accountKey": {
+			"value": ""
+		},
+		"storagels_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "1011-125836-o277vn9w"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://my-Vault-sm-18.vault.azure.net/"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_server": {
+			"value": "sqlserver-18.database.windows.net"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_database": {
+			"value": "database18"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_userName": {
+			"value": "adminuser"
+		},
+		"OnPreSqlServerLk_properties_typeProperties_server": {
+			"value": "VELC-LT-1RWYB54\\SQLEXPRESS01"
+		},
+		"OnPreSqlServerLk_properties_typeProperties_database": {
+			"value": "AdventureWorksLT2022"
+		},
+		"OnPreSqlServerLk_properties_typeProperties_userName": {
+			"value": "sushant"
+		},
+		"PostgreSqlLs_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"PostgreSqlLs_properties_typeProperties_database": {
+			"value": "Batch18"
+		},
+		"PostgreSqlLs_properties_typeProperties_username": {
+			"value": "postgres"
+		},
+		"PostgreSqlLs1_properties_typeProperties_server": {
+			"value": "localhost"
+		},
+		"PostgreSqlLs1_properties_typeProperties_database": {
+			"value": "Batch17"
+		},
+		"PostgreSqlLs1_properties_typeProperties_username": {
+			"value": "postgres"
+		},
+		"storageDatalk2_properties_typeProperties_url": {
+			"value": "https://batch18postgredls.dfs.core.windows.net/"
+		},
+		"storagels_properties_typeProperties_url": {
+			"value": "https://sushantdl.dfs.core.windows.net/"
+		}
+	}
+}

@@ -1,0 +1,216 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "postgre-adf-18"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureSQLDatabaseLinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSQLDatabaseLinkedService'"
+		},
+		"PostgreSqlLs_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'PostgreSqlLs'"
+		},
+		"PostgreSqlLs1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'PostgreSqlLs1'"
+		},
+		"storageDatalk2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'storageDatalk2'"
+		},
+		"storagels_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'storagels'"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "1011-125836-o277vn9w"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://my-Vault-sm-18.vault.azure.net/"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlserver-18.database.windows.net"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "database18"
+		},
+		"AzureSQLDatabaseLinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminuser"
+		},
+		"OnPreSqlServerLk_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "VELC-LT-1RWYB54\\SQLEXPRESS01"
+		},
+		"OnPreSqlServerLk_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorksLT2022"
+		},
+		"OnPreSqlServerLk_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sushant"
+		},
+		"PostgreSqlLs_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"PostgreSqlLs_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Batch18"
+		},
+		"PostgreSqlLs_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "postgres"
+		},
+		"PostgreSqlLs1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost"
+		},
+		"PostgreSqlLs1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Batch17"
+		},
+		"PostgreSqlLs1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "postgres"
+		},
+		"storageDatalk2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://batch18postgredls.dfs.core.windows.net/"
+		},
+		"storagels_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sushantdl.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "postgre-adf-18_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureSQLDatabaseLinkedService_password": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_password')]"
+					},
+					"storageDatalk2_accountKey": {
+						"value": "[parameters('storageDatalk2_accountKey')]"
+					},
+					"storagels_accountKey": {
+						"value": "[parameters('storagels_accountKey')]"
+					},
+					"PostgreSqlLs_password": {
+						"value": "[parameters('PostgreSqlLs_password')]"
+					},
+					"PostgreSqlLs1_password": {
+						"value": "[parameters('PostgreSqlLs1_password')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"AzureSQLDatabaseLinkedService_properties_typeProperties_server": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_properties_typeProperties_server')]"
+					},
+					"AzureSQLDatabaseLinkedService_properties_typeProperties_database": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_properties_typeProperties_database')]"
+					},
+					"AzureSQLDatabaseLinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSQLDatabaseLinkedService_properties_typeProperties_userName')]"
+					},
+					"storageDatalk2_properties_typeProperties_url": {
+						"value": "[parameters('storageDatalk2_properties_typeProperties_url')]"
+					},
+					"storagels_properties_typeProperties_url": {
+						"value": "[parameters('storagels_properties_typeProperties_url')]"
+					},
+					"OnPreSqlServerLk_properties_typeProperties_server": {
+						"value": "[parameters('OnPreSqlServerLk_properties_typeProperties_server')]"
+					},
+					"OnPreSqlServerLk_properties_typeProperties_database": {
+						"value": "[parameters('OnPreSqlServerLk_properties_typeProperties_database')]"
+					},
+					"OnPreSqlServerLk_properties_typeProperties_userName": {
+						"value": "[parameters('OnPreSqlServerLk_properties_typeProperties_userName')]"
+					},
+					"PostgreSqlLs_properties_typeProperties_server": {
+						"value": "[parameters('PostgreSqlLs_properties_typeProperties_server')]"
+					},
+					"PostgreSqlLs_properties_typeProperties_database": {
+						"value": "[parameters('PostgreSqlLs_properties_typeProperties_database')]"
+					},
+					"PostgreSqlLs_properties_typeProperties_username": {
+						"value": "[parameters('PostgreSqlLs_properties_typeProperties_username')]"
+					},
+					"PostgreSqlLs1_properties_typeProperties_server": {
+						"value": "[parameters('PostgreSqlLs1_properties_typeProperties_server')]"
+					},
+					"PostgreSqlLs1_properties_typeProperties_database": {
+						"value": "[parameters('PostgreSqlLs1_properties_typeProperties_database')]"
+					},
+					"PostgreSqlLs1_properties_typeProperties_username": {
+						"value": "[parameters('PostgreSqlLs1_properties_typeProperties_username')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "postgre-adf-18_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'postgre-adf-18_ArmTemplate_0')]"
+			]
+		}
+	]
+}
